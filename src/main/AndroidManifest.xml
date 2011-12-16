@@ -1,8 +1,12 @@
 <manifest 
-android:versionName="0.1" android:versionCode="1" package="nl.jqno.quickmail" xmlns:android="http://schemas.android.com/apk/res/android">
+    android:versionName="0.1" android:versionCode="1" package="nl.jqno.quickmail" xmlns:android="http://schemas.android.com/apk/res/android">
+    
     <uses-sdk android:minSdkVersion="8"></uses-sdk>
-    <application android:icon="@drawable/android:star_big_on" android:label="@string/app_name">
-        <activity android:label="@string/app_name" android:name=".QuickMailActivity">
+
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+
+    <application android:icon="@drawable/android:star_big_on" android:label="@string/config_app_name">
+        <activity android:label="@string/config_app_name" android:name=".ConfigActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"></action>
                 <category android:name="android.intent.category.LAUNCHER"></category>
