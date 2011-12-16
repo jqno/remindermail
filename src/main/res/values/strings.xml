@@ -3,6 +3,7 @@
     <string name="config_select">Select e-mail address</string>
     <string name="config_empty">No e-mail address selected. Press the button to select one from the contacts.</string>
     <string name="config_full">Press the button to select another e-mail address from the contacts.</string>
-    <string name="config_name">Name: </string>
-    <string name="config_mail">E-mail: </string>
+    <string name="config_name">Name:</string>
+    <string name="config_mail">E-mail:</string>
+    <string name="config_done">Done</string>
 </resources>

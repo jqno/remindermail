@@ -9,7 +9,9 @@ import android.os.Bundle
 import android.view.View
 import android.widget._
 
-class ConfigActivity extends Activity {
+import FindView._
+
+class ConfigActivity extends Activity with FindView {
   private val PICK_CONTACT = 1337
 
   private lazy val state = new State(this)
@@ -17,14 +19,9 @@ class ConfigActivity extends Activity {
   override def onCreate(savedInstanceState: Bundle) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.config)
-    registerButtonListener
+    findView[Button](R.id.config_select).onClick { _ => select }
+    findView[Button](R.id.config_done).onClick   { _ => finish }
     paint
-  }
-
-  private def registerButtonListener {
-    findView[Button](R.id.config_select).setOnClickListener(new View.OnClickListener {
-      def onClick(v: View) = select
-    })
   }
 
   private def select {
@@ -79,7 +76,4 @@ class ConfigActivity extends Activity {
     findView[TextView](R.id.config_name).setText("")
     findView[TextView](R.id.config_mail).setText("")
   }
-
-  private def findView[WidgetType <: View](id: Int): WidgetType =
-    findViewById(id).asInstanceOf[WidgetType]
 }
