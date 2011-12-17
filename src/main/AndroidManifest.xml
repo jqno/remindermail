@@ -6,13 +6,19 @@
     <uses-permission android:name="android.permission.READ_CONTACTS"/>
 
     <application android:icon="@drawable/android:star_big_on" android:label="@string/mail_app_name">
-        <activity android:label="@string/mail_app_name" android:name=".MailActivity" android:taskAffinity="nl.jqno.quickmail.MailTask">
+        <activity android:label="@string/mail_app_name"
+            android:name=".MailActivity"
+            android:taskAffinity="nl.jqno.quickmail.MailTask"
+            android:theme="@style/Invisible">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"></action>
                 <category android:name="android.intent.category.LAUNCHER"></category>
             </intent-filter>
         </activity>
-        <activity android:label="@string/config_app_name" android:name=".ConfigActivity" android:taskAffinity="nl.jqno.quickmail.ConfigTask">
+
+        <activity android:label="@string/config_app_name"
+            android:name=".ConfigActivity"
+            android:taskAffinity="nl.jqno.quickmail.ConfigTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"></action>
                 <category android:name="android.intent.category.LAUNCHER"></category>
