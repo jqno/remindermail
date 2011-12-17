@@ -1,4 +1,6 @@
 <resources>
+    <string name="mail_app_name">QuickMail</string>
+
     <string name="config_app_name">QuickMail Configuration</string>
     <string name="config_select">Select e-mail address</string>
     <string name="config_empty">No e-mail address selected. Press the button to select one from the contacts.</string>
