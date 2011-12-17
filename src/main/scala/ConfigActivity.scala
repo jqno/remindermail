@@ -21,12 +21,18 @@ class ConfigActivity extends Activity with FindView {
     setContentView(R.layout.config)
     findView[Button](R.id.config_select).onClick { _ => select }
     findView[Button](R.id.config_done).onClick   { _ => finish }
+    findView[Button](R.id.config_about).onClick  { _ => about  }
     paint
   }
 
   private def select {
     val intent = new Intent(Intent.ACTION_PICK, Contacts.CONTENT_URI)
     startActivityForResult(intent, PICK_CONTACT)
+  }
+
+  private def about {
+    val intent = new Intent(this, classOf[AboutActivity])
+    startActivity(intent)
   }
 
   override def onActivityResult(reqCode: Int, resultCode: Int, data: Intent) {
