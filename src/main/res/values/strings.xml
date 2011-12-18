@@ -44,7 +44,7 @@ This is useful to quickly send reminders to yourself, or to an online ToDo-list 
     <string name="about_copyright">Copyright (C) 2011 by Jan Ouwens</string>
     <string name="about_website">\
 This program is free software, released under the GNU General Public License.
-For more information, visit the &lt;a href=\"https://github.com/jqno/remindermail\">website&lt;/a>.
+For more information, visit the &lt;a href=\"http://jqno.github.com/remindermail\">website&lt;/a>.
     </string>
     <string name="about_close">Close</string>
 </resources>
