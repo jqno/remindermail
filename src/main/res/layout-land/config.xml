@@ -9,11 +9,6 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_gravity="center">
-        <Button
-            android:id="@+id/config_select"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/config_select" />
         <TextView
             android:id="@+id/config_blurb"
             android:layout_width="fill_parent"
@@ -47,19 +42,34 @@
             </TableRow>
         </TableLayout>
         <TextView
-            android:paddingBottom="20dip"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="@string/config_shortcut" />
-        <Button
-            android:id="@+id/config_about"
-            android:layout_width="fill_parent"
+        <TableLayout
+            android:paddingTop="20dip"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/config_about" />
-        <Button
-            android:id="@+id/config_done"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/config_done" />
+            android:stretchColumns="*">
+            <TableRow>
+                <Button
+                    android:id="@+id/config_select"
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/config_select" />
+                <Button
+                    android:id="@+id/config_about"
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/config_about" />
+                <Button
+                    android:id="@+id/config_done"
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/config_done" />
+            </TableRow>
+        </TableLayout>
     </LinearLayout>
 </LinearLayout>
