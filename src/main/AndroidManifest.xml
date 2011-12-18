@@ -27,9 +27,10 @@
 
     <uses-permission android:name="android.permission.READ_CONTACTS"/>
 
-    <application android:icon="@drawable/android:star_big_on" android:label="@string/mail_app_name">
+    <application android:icon="@drawable/main_icon" android:label="@string/mail_app_name">
         <activity android:label="@string/config_app_name"
             android:name=".ConfigActivity"
+            android:icon="@drawable/config_icon"
             android:taskAffinity="nl.jqno.quickmail.ConfigTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"></action>
