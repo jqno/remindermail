@@ -1,4 +1,4 @@
-import nl.jqno.quickmail
+import nl.jqno.remindermail
 import org.scalatest.matchers.ShouldMatchers
 import org.scalatest.Spec
 

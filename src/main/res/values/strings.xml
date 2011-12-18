@@ -1,50 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
- QuickMail is an Android app that will let you quickly send e-mail to
+ ReminderMail is an Android app that will let you quickly send e-mail to
  a pre-defined address.
 
  Copyright (C) 2011 by Jan Ouwens
 
- This file is part of QuickMail.
+ This file is part of ReminderMail.
 
- QuickMail is free software: you can redistribute it and/or modify
+ ReminderMail is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
  the Free Software Foundation, either version 3 of the License, or
  (at your option) any later version.
 
- QuickMail is distributed in the hope that it will be useful,
+ ReminderMail is distributed in the hope that it will be useful,
  but WITHOUT ANY WARRANTY; without even the implied warranty of
  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  GNU General Public License for more details.
 
  You should have received a copy of the GNU General Public License
- along with QuickMail.  If not, see <http://www.gnu.org/licenses/>.
+ along with ReminderMail.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <resources>
-    <string name="mail_app_name">QuickMail</string>
-    <string name="sharebox_app_name">\@ QuickMail</string>
+    <string name="mail_app_name">ReminderMail</string>
+    <string name="sharebox_app_name">\@ ReminderMail</string>
 
-    <string name="config_app_name">QuickMail Configuration</string>
+    <string name="config_app_name">ReminderMail Configuration</string>
     <string name="config_select">Select e-mail address</string>
     <string name="config_empty">No e-mail address selected. Press the Select button to select one from the contacts.</string>
     <string name="config_full">Press the Select button to select a different e-mail address from the contacts.</string>
     <string name="config_name">Name:</string>
     <string name="config_mail">E-mail:</string>
-    <string name="config_shortcut">Don\'t forget to place a shortcut to QuickMail on your home screen!</string>
+    <string name="config_shortcut">Don\'t forget to place a shortcut to ReminderMail on your home screen!</string>
     <string name="config_done">Done</string>
     <string name="config_about">About</string>
 
-    <string name="about_app_name">About QuickMail</string>
+    <string name="about_app_name">About ReminderMail</string>
     <string name="about_explanation">\
-QuickMail is an app that will let you quickly send e-mail to a pre-defined address.
+ReminderMail is an app that will let you quickly send e-mail to a pre-defined address.
 This is useful to quickly send reminders to yourself, or to an online ToDo-list application (such as &lt;a href=\"http://www.nirvanahq.com\">NirvanaHQ&lt;/a>).
     </string>
-    <string name="about_shortcut">Move the icon to your home screen for easy access, or share pages via \"@ QuickMail\".</string>
-    <string name="about_limitations">Note that QuickMail only supports one e-mail address.</string>
+    <string name="about_shortcut">Move the icon to your home screen for easy access, or share pages via \"@ ReminderMail\".</string>
+    <string name="about_limitations">Note that ReminderMail only supports one e-mail address.</string>
     <string name="about_copyright">Copyright (C) 2011 by Jan Ouwens</string>
     <string name="about_website">\
 This program is free software, released under the GNU General Public License.
-For more information, visit the &lt;a href=\"https://github.com/jqno/quickmail\">website&lt;/a>.
+For more information, visit the &lt;a href=\"https://github.com/jqno/remindermail\">website&lt;/a>.
     </string>
     <string name="about_close">Close</string>
 </resources>

@@ -5,7 +5,7 @@ import AndroidKeys._
 
 object General {
   val settings = Defaults.defaultSettings ++ Seq (
-    name := "QuickMail",
+    name := "ReminderMail",
     version := "0.1",
     scalaVersion := "2.9.0-1",
     platformName in Android := "android-8"
@@ -23,7 +23,7 @@ object General {
 
 object AndroidBuild extends Build {
   lazy val main = Project (
-    "QuickMail",
+    "ReminderMail",
     file("."),
     settings = General.fullAndroidSettings
   )
@@ -32,7 +32,7 @@ object AndroidBuild extends Build {
     "tests",
     file("tests"),
     settings = General.settings ++ AndroidTest.androidSettings ++ Seq (
-      name := "QuickMailTests"
+      name := "ReminderMailTests"
     )
   ) dependsOn main
 }
