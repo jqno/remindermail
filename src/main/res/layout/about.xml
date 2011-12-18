@@ -5,9 +5,18 @@
     android:layout_height="fill_parent"
     android:padding="30dip">
     <TextView
+        android:id="@+id/about_explanation"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/about_explanation" />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/about_shortcut" />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/about_limitations" />
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
