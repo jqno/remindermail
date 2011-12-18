@@ -39,7 +39,7 @@
 ReminderMail is an app that will let you quickly send e-mail to a pre-defined address.
 This is useful to quickly send reminders to yourself, or to an online ToDo-list application (such as &lt;a href=\"http://www.nirvanahq.com\">NirvanaHQ&lt;/a>).
     </string>
-    <string name="about_shortcut">Move the icon to your home screen for easy access, or share pages via \"@ ReminderMail\".</string>
+    <string name="about_shortcut">Move the ReminderMail icon to your home screen for easy access, or share pages via \"@ ReminderMail\".</string>
     <string name="about_limitations">Note that ReminderMail only supports one e-mail address.</string>
     <string name="about_copyright">Copyright (C) 2011 by Jan Ouwens</string>
     <string name="about_website">\
