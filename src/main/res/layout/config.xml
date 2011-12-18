@@ -38,11 +38,11 @@
             android:text="@string/config_select" />
         <TextView
             android:id="@+id/config_blurb"
+            android:paddingBottom="20dip"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content" />
         <TableLayout
             android:id="@+id/config_setting_box"
-            android:paddingTop="20dip"
             android:paddingBottom="20dip"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
@@ -68,11 +68,6 @@
                     android:layout_height="wrap_content" />
             </TableRow>
         </TableLayout>
-        <TextView
-            android:paddingBottom="20dip"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/config_shortcut" />
         <Button
             android:id="@+id/config_about"
             android:layout_width="fill_parent"
@@ -83,5 +78,10 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="@string/config_done" />
+        <TextView
+            android:paddingTop="20dip"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/config_shortcut" />
     </LinearLayout>
 </LinearLayout>
