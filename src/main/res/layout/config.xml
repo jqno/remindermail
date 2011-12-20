@@ -20,73 +20,234 @@
  You should have received a copy of the GNU General Public License
  along with ReminderMail.  If not, see <http://www.gnu.org/licenses/>.
 -->
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
+    android:id="@+id/config_scroller"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:padding="30dip">
-    <TextView
-        android:id="@+id/invisible_context_menu_view"
-        android:layout_width="0dip"
-        android:layout_height="0dip"
-        android:visibility="gone" />
+    android:fillViewport="true">
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_gravity="center">
-        <Button
-            android:id="@+id/config_select"
+        android:padding="10dip">
+        <TextView
+            android:id="@+id/config_invisible_context_menu_view"
+            android:layout_width="0dip"
+            android:layout_height="0dip"
+            android:visibility="gone" />
+
+        <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="@string/config_select" />
+            android:layout_weight="1.0"
+            android:textStyle="bold"
+            android:textSize="8pt"
+            android:text="@string/config_step0_remindermail"
+            android:paddingBottom="20dip" />
         <TextView
-            android:id="@+id/config_blurb"
-            android:paddingBottom="20dip"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content" />
-        <TableLayout
-            android:id="@+id/config_setting_box"
-            android:paddingBottom="20dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:textSize="7pt"
+            android:text="@string/config_step0_intro"
+            android:paddingBottom="20dip" />
+
+        <!-- STEP 1 -->
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:layout_weight="1.0"
+            android:background="#FF00FF00" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:textStyle="bold"
+            android:textSize="7pt"
+            android:text="@string/config_step1" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:textStyle="bold"
+            android:textSize="7pt"
+            android:text="@string/config_step1_title" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:textSize="6pt"
+            android:text="@string/config_step1_explanation"
+            android:paddingBottom="20dip" />
+
+        <!-- STEP 2 -->
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:layout_weight="1.0"
+            android:background="#FF00FF00" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:textStyle="bold"
+            android:textSize="7pt"
+            android:text="@string/config_step2" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:textStyle="bold"
+            android:textSize="7pt"
+            android:text="@string/config_step2_title" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="20dip">
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.0"
+                android:textSize="6pt"
+                android:text="@string/config_step2_explanation" />
+            <Button
+                android:id="@+id/config_select"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
+                android:text="@string/config_step2_button" />
+        </LinearLayout>
+
+        <!-- STEP 3 -->
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:layout_weight="1.0"
+            android:background="#FF00FF00" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:textStyle="bold"
+            android:textSize="7pt"
+            android:text="@string/config_step3" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:textStyle="bold"
+            android:textSize="7pt"
+            android:text="@string/config_step3_title" />
+        <TextView
+            android:id="@+id/config_step3_empty"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:textSize="6pt"
+            android:text="@string/config_step3_empty"
+            android:paddingBottom="20dip" />
+       <TableLayout
+            android:id="@+id/config_step3_setting_box"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:paddingBottom="20dip">
             <TableRow>
                 <TextView
                     android:paddingRight="10dip"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/config_name" />
+                    android:textSize="6pt"
+                    android:text="@string/config_step3_name" />
                 <TextView
-                    android:id="@+id/config_name"
+                    android:id="@+id/config_step3_name"
                     android:layout_width="fill_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:textSize="6pt" />
             </TableRow>
             <TableRow>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/config_mail" />
+                    android:textSize="6pt"
+                    android:text="@string/config_step3_mail" />
                 <TextView
-                    android:id="@+id/config_mail"
+                    android:id="@+id/config_step3_mail"
                     android:layout_width="fill_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:textSize="6pt" />
             </TableRow>
         </TableLayout>
-        <Button
-            android:id="@+id/config_about"
+
+        <!-- STEP 4 -->
+        <!-- Deferred -->
+
+        <!-- STEP 5 -->
+        <View
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/config_about" />
-        <Button
-            android:id="@+id/config_done"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/config_done" />
+            android:layout_height="1px"
+            android:layout_weight="1.0"
+            android:background="#FF00FF00" />
         <TextView
-            android:paddingTop="20dip"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="@string/config_shortcut" />
+            android:layout_weight="1.0"
+            android:textStyle="bold"
+            android:textSize="7pt"
+            android:text="@string/config_step5" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:textStyle="bold"
+            android:textSize="7pt"
+            android:text="@string/config_step5_title" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:textSize="6pt"
+            android:text="@string/config_step5_explanation"
+            android:paddingBottom="20dip" />
+
+        <!-- STEP 6 -->
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:layout_weight="1.0"
+            android:background="#FF00FF00" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:textStyle="bold"
+            android:textSize="7pt"
+            android:text="@string/config_step6" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:paddingBottom="10dip"
+            android:textStyle="bold"
+            android:textSize="7pt"
+            android:text="@string/config_step6_title" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/config_done"
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:text="@string/config_step6_close" />
+            <Button
+                android:id="@+id/config_about"
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:text="@string/config_step6_about" />
+        </LinearLayout>
     </LinearLayout>
-</LinearLayout>
+</ScrollView>

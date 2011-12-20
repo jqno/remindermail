@@ -25,15 +25,34 @@
     <string name="sharebox_app_name">\@ ReminderMail</string>
 
     <string name="config_app_name">ReminderMail Configuration</string>
-    <string name="config_select">Select e-mail address</string>
-    <string name="config_empty">No e-mail address selected. Press the Select button to select one from the contacts.</string>
-    <string name="config_full">Press the Select button to select a different e-mail address from the contacts.</string>
-    <string name="config_name">Name:</string>
-    <string name="config_mail">E-mail:</string>
-    <string name="config_shortcut">Don\'t forget to place a shortcut to ReminderMail on your home screen!</string>
-    <string name="config_pick_mail">Choose an e-mail address</string>
-    <string name="config_done">Done</string>
-    <string name="config_about">About</string>
+
+    <string name="config_step0_remindermail">ReminderMail</string>
+    <string name="config_step0_intro">So, you want to send yourself reminders. That\'s cool! But first, we need to set everything up. Don\'t worry, it\'s easy. Just follow these steps:</string>
+
+    <string name="config_step1">Step 1</string>
+    <string name="config_step1_title">Make sure you have a Google Contact for the e-mail address you want to use</string>
+    <string name="config_step1_explanation">If you don\'t have one, you can create one now. Go ahead; I\'ll wait.</string>
+
+    <string name="config_step2">Step 2</string>
+    <string name="config_step2_title">Choose an e-mail address</string>
+    <string name="config_step2_explanation">To choose an e-mail address, press the button and select a contact from the list.</string>
+    <string name="config_step2_button">GO</string>
+    <string name="config_step2_pick_mail">Choose an e-mail address</string>
+
+    <string name="config_step3">Step 3</string>
+    <string name="config_step3_title">Verify the e-mail address</string>
+    <string name="config_step3_empty">You haven\'t selected an e-mail address yet.</string>
+    <string name="config_step3_name">Name:</string>
+    <string name="config_step3_mail">E-mail:</string>
+
+    <string name="config_step5">Step 5</string>
+    <string name="config_step5_title">Put the ReminderMail icon on your home screen</string>
+    <string name="config_step5_explanation">You\'ll have to do that yourself. But it\'s totally worth it, because that way, ReminderMail will always be within reach!</string>
+
+    <string name="config_step6">Step 6</string>
+    <string name="config_step6_title">Done!</string>
+    <string name="config_step6_close">Get me out of here</string>
+    <string name="config_step6_about">About this app</string>
 
     <string name="about_app_name">About ReminderMail</string>
     <string name="about_explanation">\

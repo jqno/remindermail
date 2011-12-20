@@ -39,7 +39,7 @@ class ConfigActivity extends Activity with FindView {
   private val PICK_CONTACT = 1337
 
   private lazy val state = new State(this)
-  private lazy val contextMenuView = find(R.id.invisible_context_menu_view)
+  private lazy val contextMenuView = find(R.id.config_invisible_context_menu_view)
 
   private var nameCandidate = ""
   private var emailCandidates = List[String]()
@@ -50,6 +50,7 @@ class ConfigActivity extends Activity with FindView {
     findView[Button](R.id.config_select).onClick { _ => select }
     findView[Button](R.id.config_done).onClick   { _ => finish }
     findView[Button](R.id.config_about).onClick  { _ => about  }
+    findView[ScrollView](R.id.config_scroller).fullScroll(View.FOCUS_UP)
     registerForContextMenu(contextMenuView)
     paint
   }
@@ -104,7 +105,7 @@ class ConfigActivity extends Activity with FindView {
 
   override def onCreateContextMenu(menu: ContextMenu, v: View, menuInfo: ContextMenuInfo) {
     super.onCreateContextMenu(menu, v, menuInfo)
-    menu.setHeaderTitle(R.string.config_pick_mail)
+    menu.setHeaderTitle(R.string.config_step2_pick_mail)
     emailCandidates.zipWithIndex foreach {
       case (email, index) => menu.add(0, index, 0, email)
     }
@@ -124,16 +125,16 @@ class ConfigActivity extends Activity with FindView {
   }
 
   private def paintFull {
-    findView[TextView](R.id.config_blurb).setText(R.string.config_full)
-    findView[TextView](R.id.config_name).setText(state.name.get)
-    findView[TextView](R.id.config_mail).setText(state.mail.get)
-    findView[TableLayout](R.id.config_setting_box).setVisibility(View.VISIBLE)
+    findView[TextView](R.id.config_step3_name).setText(state.name.get)
+    findView[TextView](R.id.config_step3_mail).setText(state.mail.get)
+    findView[TextView](R.id.config_step3_empty).setVisibility(View.GONE)
+    findView[TableLayout](R.id.config_step3_setting_box).setVisibility(View.VISIBLE)
   }
 
   private def paintEmpty {
-    findView[TextView](R.id.config_blurb).setText(R.string.config_empty)
-    findView[TextView](R.id.config_name).setText("")
-    findView[TextView](R.id.config_mail).setText("")
-    findView[TableLayout](R.id.config_setting_box).setVisibility(View.GONE)
+    findView[TextView](R.id.config_step3_name).setText("")
+    findView[TextView](R.id.config_step3_mail).setText("")
+    findView[TextView](R.id.config_step3_empty).setVisibility(View.VISIBLE)
+    findView[TableLayout](R.id.config_step3_setting_box).setVisibility(View.GONE)
   }
 }
