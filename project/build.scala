@@ -8,7 +8,7 @@ object General {
     name := "ReminderMail",
     version := "0.2",
     scalaVersion := "2.9.0-1",
-    platformName in Android := "android-8"
+    platformName in Android := "android-7"
   )
 
   lazy val fullAndroidSettings =
