@@ -31,6 +31,7 @@
     <string name="config_name">Name:</string>
     <string name="config_mail">E-mail:</string>
     <string name="config_shortcut">Don\'t forget to place a shortcut to ReminderMail on your home screen!</string>
+    <string name="config_pick_mail">Choose an e-mail address</string>
     <string name="config_done">Done</string>
     <string name="config_about">About</string>
 

@@ -27,6 +27,9 @@ import android.content.Intent
 import android.database.Cursor
 import android.net.Uri
 import android.os.Bundle
+import android.view.ContextMenu
+import android.view.ContextMenu.ContextMenuInfo
+import android.view.MenuItem
 import android.view.View
 import android.widget._
 
@@ -36,6 +39,10 @@ class ConfigActivity extends Activity with FindView {
   private val PICK_CONTACT = 1337
 
   private lazy val state = new State(this)
+  private lazy val contextMenuView = find(R.id.invisible_context_menu_view)
+
+  private var nameCandidate = ""
+  private var emailCandidates = List[String]()
 
   override def onCreate(savedInstanceState: Bundle) {
     super.onCreate(savedInstanceState)
@@ -43,6 +50,7 @@ class ConfigActivity extends Activity with FindView {
     findView[Button](R.id.config_select).onClick { _ => select }
     findView[Button](R.id.config_done).onClick   { _ => finish }
     findView[Button](R.id.config_about).onClick  { _ => about  }
+    registerForContextMenu(contextMenuView)
     paint
   }
 
@@ -63,7 +71,6 @@ class ConfigActivity extends Activity with FindView {
       case PICK_CONTACT =>
         if (resultCode == Activity.RESULT_OK) {
           updateSettings(data.getData)
-          paint
         }
     }
   }
@@ -72,18 +79,42 @@ class ConfigActivity extends Activity with FindView {
     val contactCursor = managedQuery(contact, null, null, null, null)
     if (contactCursor.moveToFirst()) {
       val id = getString(contactCursor, Contacts.LOOKUP_KEY)
-      state.name = getString(contactCursor, Contacts.DISPLAY_NAME)
+
+      nameCandidate = getString(contactCursor, Contacts.DISPLAY_NAME)
+      emailCandidates = List[String]()
 
       val mailCursor = managedQuery(Contacts.EMAIL_CONTENT_URI, null, Contacts.EMAIL_CONTACT_ID + " = ?", Array(id), null)
-      if (mailCursor.moveToFirst()) {
+      while (mailCursor.moveToNext()) {
         val e = getString(mailCursor, Contacts.EMAIL_DATA)
-        state.mail = e
+        emailCandidates = e :: emailCandidates
+      }
+
+      if (emailCandidates.size == 1) {
+        state.setNameAndMail(nameCandidate, emailCandidates(0))
+        paint
+      }
+      else {
+        openContextMenu(contextMenuView)
       }
     }
   }
 
   private def getString(cursor: Cursor, id: String) =
     cursor.getString(cursor getColumnIndex id)
+
+  override def onCreateContextMenu(menu: ContextMenu, v: View, menuInfo: ContextMenuInfo) {
+    super.onCreateContextMenu(menu, v, menuInfo)
+    menu.setHeaderTitle(R.string.config_pick_mail)
+    emailCandidates.zipWithIndex foreach {
+      case (email, index) => menu.add(0, index, 0, email)
+    }
+  }
+
+  override def onContextItemSelected(item: MenuItem): Boolean = {
+    state.setNameAndMail(nameCandidate, emailCandidates(item.getItemId))
+    paint
+    return true
+  }
 
   private def paint {
     state.mail match {
