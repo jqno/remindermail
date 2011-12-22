@@ -38,21 +38,18 @@
     <string name="config_step2_explanation">To choose an e-mail address, press the button and select a contact from the list.</string>
     <string name="config_step2_button">GO</string>
     <string name="config_step2_pick_mail">Choose an e-mail address</string>
+    <string name="config_step2_empty">You haven\'t selected an e-mail address yet.</string>
+    <string name="config_step2_name">Name:</string>
+    <string name="config_step2_mail">E-mail:</string>
 
-    <string name="config_step3">Step 3</string>
-    <string name="config_step3_title">Verify the e-mail address</string>
-    <string name="config_step3_empty">You haven\'t selected an e-mail address yet.</string>
-    <string name="config_step3_name">Name:</string>
-    <string name="config_step3_mail">E-mail:</string>
+    <string name="config_step4">Step 4</string>
+    <string name="config_step4_title">Put the ReminderMail icon on your home screen</string>
+    <string name="config_step4_explanation">You\'ll have to do that yourself. But it\'s totally worth it, because that way, ReminderMail will always be within reach!</string>
 
     <string name="config_step5">Step 5</string>
-    <string name="config_step5_title">Put the ReminderMail icon on your home screen</string>
-    <string name="config_step5_explanation">You\'ll have to do that yourself. But it\'s totally worth it, because that way, ReminderMail will always be within reach!</string>
-
-    <string name="config_step6">Step 6</string>
-    <string name="config_step6_title">Done!</string>
-    <string name="config_step6_close">Get me out of here</string>
-    <string name="config_step6_about">About this app</string>
+    <string name="config_step5_title">Done!</string>
+    <string name="config_step5_close">Get me out of here</string>
+    <string name="config_step5_about">About this app</string>
 
     <string name="about_app_name">About ReminderMail</string>
     <string name="about_explanation">\

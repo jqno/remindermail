@@ -125,16 +125,16 @@ class ConfigActivity extends Activity with FindView {
   }
 
   private def paintFull {
-    findView[TextView](R.id.config_step3_name).setText(state.name.get)
-    findView[TextView](R.id.config_step3_mail).setText(state.mail.get)
-    findView[TextView](R.id.config_step3_empty).setVisibility(View.GONE)
-    findView[TableLayout](R.id.config_step3_setting_box).setVisibility(View.VISIBLE)
+    findView[TextView](R.id.config_step2_name).setText(state.name.get)
+    findView[TextView](R.id.config_step2_mail).setText(state.mail.get)
+    findView[TextView](R.id.config_step2_empty).setVisibility(View.GONE)
+    findView[TableLayout](R.id.config_step2_setting_box).setVisibility(View.VISIBLE)
   }
 
   private def paintEmpty {
-    findView[TextView](R.id.config_step3_name).setText("")
-    findView[TextView](R.id.config_step3_mail).setText("")
-    findView[TextView](R.id.config_step3_empty).setVisibility(View.VISIBLE)
-    findView[TableLayout](R.id.config_step3_setting_box).setVisibility(View.GONE)
+    findView[TextView](R.id.config_step2_name).setText("")
+    findView[TextView](R.id.config_step2_mail).setText("")
+    findView[TextView](R.id.config_step2_empty).setVisibility(View.VISIBLE)
+    findView[TableLayout](R.id.config_step2_setting_box).setVisibility(View.GONE)
   }
 }
