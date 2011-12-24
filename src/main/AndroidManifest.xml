@@ -28,16 +28,6 @@
     <uses-permission android:name="android.permission.READ_CONTACTS"/>
 
     <application android:icon="@drawable/main_icon" android:label="@string/mail_app_name">
-        <activity android:label="@string/config_app_name"
-            android:name=".ConfigActivity"
-            android:icon="@drawable/config_icon"
-            android:taskAffinity="nl.jqno.remindermail.ConfigTask">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"></action>
-                <category android:name="android.intent.category.LAUNCHER"></category>
-            </intent-filter>
-        </activity>
-
         <activity android:label="@string/mail_app_name"
             android:name=".MailActivity"
             android:taskAffinity="nl.jqno.remindermail.MailTask"
@@ -50,6 +40,16 @@
                 <action android:name="android.intent.action.SEND" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
+
+        <activity android:label="@string/config_app_name"
+            android:name=".ConfigActivity"
+            android:icon="@drawable/config_icon"
+            android:taskAffinity="nl.jqno.remindermail.ConfigTask">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"></action>
+                <category android:name="android.intent.category.LAUNCHER"></category>
             </intent-filter>
         </activity>
 
