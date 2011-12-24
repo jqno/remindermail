@@ -37,14 +37,28 @@
             android:layout_height="0dip"
             android:visibility="gone" />
 
-        <TextView
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1.0"
-            android:textStyle="bold"
-            android:textSize="8pt"
-            android:text="@string/config_step0_remindermail"
-            android:paddingBottom="20dip" />
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:src="@drawable/main_icon"
+                android:paddingRight="5dip" />
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:textStyle="bold"
+                android:textSize="8pt"
+                android:text="@string/config_step0_remindermail" />
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0" />
+        </LinearLayout>
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
