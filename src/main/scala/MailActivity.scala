@@ -39,7 +39,7 @@ class MailActivity extends Activity {
 
   private def mail {
     val intent = new Intent(Intent.ACTION_SEND)
-    intent.setType("plain/text")
+    intent.setType("message/rfc822")
 
     intent.putExtra(Intent.EXTRA_EMAIL, getRecipient)
     intent.putExtra(Intent.EXTRA_TEXT, getText)
