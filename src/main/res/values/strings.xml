@@ -43,13 +43,13 @@
     <string name="config_step2_mail">E-mail:</string>
 
     <string name="config_step3">Step 3</string>
-    <string name="config_step3_title">Add a prefix</string>
+    <string name="config_step3_title">Add a subject prefix</string>
     <string name="config_step3_explanation">If you want, you can add a prefix to the subject of each mail that ReminderMail sends for you.</string>
     <string name="config_step3_extra_explanation">Don\'t worry; this is totally optional. But if you have one, ReminderMail will automatically place it between [square brackets].</string>
     <string name="config_step3_button">GO</string>
-    <string name="config_step3_empty">The prefix is empty.</string>
+    <string name="config_step3_empty">The subject prefix is empty.</string>
     <string name="config_step3_prefix">Prefix:</string>
-    <string name="config_step3_alert_title">Prefix</string>
+    <string name="config_step3_alert_title">Subject prefix</string>
     <string name="config_step3_alert_message">Type a prefix</string>
     <string name="config_step3_alert_set">Set prefix</string>
     <string name="config_step3_alert_clear">Clear prefix</string>
