@@ -28,6 +28,7 @@ import android.content.Intent
 import android.database.Cursor
 import android.net.Uri
 import android.os.Bundle
+import android.os.Build.VERSION
 import android.view.ContextMenu
 import android.view.ContextMenu.ContextMenuInfo
 import android.view.MenuItem
@@ -38,6 +39,14 @@ import FindView._
 
 class ConfigActivity extends Activity with FindView {
   private val PICK_CONTACT = 1337
+  private val ICE_CREAM_SANDWICH = 14
+  private val COLOR_LINES = List(
+    R.id.config_step1_line,
+    R.id.config_step2_line,
+    R.id.config_step3_line,
+    R.id.config_step4_line,
+    R.id.config_step5_line
+  )
 
   private lazy val state = new State(this)
   private lazy val contextMenuView = find(R.id.config_invisible_context_menu_view)
@@ -55,6 +64,7 @@ class ConfigActivity extends Activity with FindView {
     findView[ScrollView](R.id.config_scroller).fullScroll(View.FOCUS_UP)
     registerForContextMenu(contextMenuView)
 
+    paintColorLines
     paintMail
     paintPrefix
   }
@@ -133,6 +143,11 @@ class ConfigActivity extends Activity with FindView {
     state.setNameAndMail(nameCandidate, emailCandidates(item.getItemId))
     paintMail
     return true
+  }
+
+  private def paintColorLines {
+    val color = if (VERSION.SDK_INT < ICE_CREAM_SANDWICH) R.color.android2 else R.color.android4
+    COLOR_LINES foreach { find(_).setBackgroundResource(color) }
   }
 
   private def paintMail {

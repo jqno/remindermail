@@ -69,10 +69,10 @@
 
         <!-- STEP 1 -->
         <View
+            android:id="@+id/config_step1_line"
             android:layout_width="fill_parent"
             android:layout_height="1px"
-            android:layout_weight="1.0"
-            android:background="#FF00FF00" />
+            android:layout_weight="1.0" />
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -97,10 +97,10 @@
 
         <!-- STEP 2 -->
         <View
+            android:id="@+id/config_step2_line"
             android:layout_width="fill_parent"
             android:layout_height="1px"
-            android:layout_weight="1.0"
-            android:background="#FF00FF00" />
+            android:layout_weight="1.0" />
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -176,10 +176,10 @@
 
         <!-- STEP 3 -->
         <View
+            android:id="@+id/config_step3_line"
             android:layout_width="fill_parent"
             android:layout_height="1px"
-            android:layout_weight="1.0"
-            android:background="#FF00FF00" />
+            android:layout_weight="1.0" />
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -249,10 +249,10 @@
 
         <!-- STEP 4 -->
         <View
+            android:id="@+id/config_step4_line"
             android:layout_width="fill_parent"
             android:layout_height="1px"
-            android:layout_weight="1.0"
-            android:background="#FF00FF00" />
+            android:layout_weight="1.0" />
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -277,10 +277,10 @@
 
         <!-- STEP 5 -->
         <View
+            android:id="@+id/config_step5_line"
             android:layout_width="fill_parent"
             android:layout_height="1px"
-            android:layout_weight="1.0"
-            android:background="#FF00FF00" />
+            android:layout_weight="1.0" />
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
