@@ -127,7 +127,7 @@
                 android:textSize="6pt"
                 android:text="@string/config_step2_explanation" />
             <Button
-                android:id="@+id/config_select"
+                android:id="@+id/config_step2_go"
                 android:layout_width="0dip"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.3"
@@ -138,6 +138,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1.0"
+            android:textStyle="italic"
             android:textSize="6pt"
             android:text="@string/config_step2_empty"
             android:paddingBottom="20dip" />
@@ -174,7 +175,77 @@
         </TableLayout>
 
         <!-- STEP 3 -->
-        <!-- Deferred -->
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:layout_weight="1.0"
+            android:background="#FF00FF00" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:textStyle="bold"
+            android:textSize="7pt"
+            android:text="@string/config_step3" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:textStyle="bold"
+            android:textSize="7pt"
+            android:text="@string/config_step3_title" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dip">
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.0"
+                android:textSize="6pt"
+                android:text="@string/config_step3_explanation" />
+            <Button
+                android:id="@+id/config_step3_go"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
+                android:text="@string/config_step3_button" />
+        </LinearLayout>
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textSize="6pt"
+            android:text="@string/config_step3_extra_explanation"
+            android:paddingBottom="10dip" />
+        <TextView
+            android:id="@+id/config_step3_empty"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:textStyle="italic"
+            android:textSize="6pt"
+            android:text="@string/config_step3_empty"
+            android:paddingBottom="20dip" />
+       <TableLayout
+            android:id="@+id/config_step3_setting_box"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="20dip">
+            <TableRow>
+                <TextView
+                    android:paddingRight="10dip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="6pt"
+                    android:text="@string/config_step3_prefix" />
+                <TextView
+                    android:id="@+id/config_step3_prefix"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="6pt" />
+            </TableRow>
+        </TableLayout>
 
         <!-- STEP 4 -->
         <View

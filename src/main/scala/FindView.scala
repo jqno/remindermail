@@ -22,6 +22,8 @@
 package nl.jqno.remindermail
 
 import android.app.Activity
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.view.View
 import android.view.View.OnClickListener
 
@@ -38,6 +40,21 @@ class ViewWithOnClick(view: View) {
   }
 }
 
+class DialogWithOnClick(dialog: AlertDialog.Builder) {
+  def positive(textId: Int, action: Int => Any) {
+    dialog.setPositiveButton(textId, new DialogInterface.OnClickListener() {
+      def onClick(d: DialogInterface, whichButton: Int) { action(whichButton) }
+    })
+  }
+
+  def negative(textId: Int, action: Int => Any) {
+    dialog.setNegativeButton(textId, new DialogInterface.OnClickListener() {
+      def onClick(d: DialogInterface, whichButton: Int) { action(whichButton) }
+    })
+  }
+}
+
 object FindView extends Activity {
   implicit def addOnClickToViews(view: View) = new ViewWithOnClick(view)
+  implicit def addOnClickToAlertDialogs(dialog: AlertDialog.Builder) = new DialogWithOnClick(dialog)
 }

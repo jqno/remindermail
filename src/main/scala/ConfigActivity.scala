@@ -22,6 +22,7 @@
 package nl.jqno.remindermail
 
 import android.app.Activity
+import android.app.AlertDialog
 import android.content.Context._
 import android.content.Intent
 import android.database.Cursor
@@ -47,17 +48,34 @@ class ConfigActivity extends Activity with FindView {
   override def onCreate(savedInstanceState: Bundle) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.config)
-    findView[Button](R.id.config_select).onClick { _ => select }
-    findView[Button](R.id.config_done).onClick   { _ => finish }
-    findView[Button](R.id.config_about).onClick  { _ => about  }
+    findView[Button](R.id.config_step2_go).onClick { _ => select_mail }
+    findView[Button](R.id.config_step3_go).onClick { _ => set_prefix  }
+    findView[Button](R.id.config_done).onClick     { _ => finish      }
+    findView[Button](R.id.config_about).onClick    { _ => about       }
     findView[ScrollView](R.id.config_scroller).fullScroll(View.FOCUS_UP)
     registerForContextMenu(contextMenuView)
-    paint
+
+    paintMail
+    paintPrefix
   }
 
-  private def select {
+  private def select_mail {
     val intent = new Intent(Intent.ACTION_PICK, Contacts.CONTENT_URI)
     startActivityForResult(intent, PICK_CONTACT)
+  }
+
+  private def set_prefix {
+    val alert = new AlertDialog.Builder(this)
+    alert.setTitle(R.string.config_step3_alert_title)
+    alert.setMessage(R.string.config_step3_alert_message)
+
+    val input = new EditText(this)
+    input.setText(state.prefix getOrElse "")
+    alert.setView(input)
+    alert.positive(R.string.config_step3_alert_set,   { _ => state.prefix = input.getText.toString; paintPrefix })
+    alert.negative(R.string.config_step3_alert_clear, { _ => state.prefix = "";                     paintPrefix })
+
+    alert.show()
   }
 
   private def about {
@@ -92,7 +110,7 @@ class ConfigActivity extends Activity with FindView {
 
       if (emailCandidates.size == 1) {
         state.setNameAndMail(nameCandidate, emailCandidates(0))
-        paint
+        paintMail
       }
       else {
         openContextMenu(contextMenuView)
@@ -113,28 +131,48 @@ class ConfigActivity extends Activity with FindView {
 
   override def onContextItemSelected(item: MenuItem): Boolean = {
     state.setNameAndMail(nameCandidate, emailCandidates(item.getItemId))
-    paint
+    paintMail
     return true
   }
 
-  private def paint {
+  private def paintMail {
     state.mail match {
-      case Some(_) => paintFull
-      case None    => paintEmpty
+      case None    => hideMail
+      case Some(_) => showMail
     }
   }
 
-  private def paintFull {
+  private def showMail {
     findView[TextView](R.id.config_step2_name).setText(state.name.get)
     findView[TextView](R.id.config_step2_mail).setText(state.mail.get)
     findView[TextView](R.id.config_step2_empty).setVisibility(View.GONE)
     findView[TableLayout](R.id.config_step2_setting_box).setVisibility(View.VISIBLE)
   }
 
-  private def paintEmpty {
+  private def hideMail {
     findView[TextView](R.id.config_step2_name).setText("")
     findView[TextView](R.id.config_step2_mail).setText("")
     findView[TextView](R.id.config_step2_empty).setVisibility(View.VISIBLE)
     findView[TableLayout](R.id.config_step2_setting_box).setVisibility(View.GONE)
+  }
+
+  private def paintPrefix = {
+    state.prefix match {
+      case None     => hidePrefix
+      case Some("") => hidePrefix
+      case Some(_)  => showPrefix
+    }
+  }
+
+  private def showPrefix {
+    findView[TextView](R.id.config_step3_prefix).setText(state.prefix.get)
+    findView[TextView](R.id.config_step3_empty).setVisibility(View.GONE)
+    findView[TableLayout](R.id.config_step3_setting_box).setVisibility(View.VISIBLE)
+  }
+
+  private def hidePrefix {
+    findView[TextView](R.id.config_step3_prefix).setText("")
+    findView[TextView](R.id.config_step3_empty).setVisibility(View.VISIBLE)
+    findView[TableLayout](R.id.config_step3_setting_box).setVisibility(View.GONE)
   }
 }

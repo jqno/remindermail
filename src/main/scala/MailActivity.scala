@@ -38,24 +38,33 @@ class MailActivity extends Activity {
   }
 
   private def mail {
-    val recipient = "%s <%s>".format(state.name.get, state.mail.get)
-    val (subject, text) = determineContent
-
     val intent = new Intent(Intent.ACTION_SEND)
     intent.setType("plain/text")
-    intent.putExtra(Intent.EXTRA_EMAIL, Array(recipient))
-    intent.putExtra(Intent.EXTRA_SUBJECT, subject)
-    intent.putExtra(Intent.EXTRA_TEXT, text)
+
+    intent.putExtra(Intent.EXTRA_EMAIL, getRecipient)
+    intent.putExtra(Intent.EXTRA_TEXT, getText)
+    intent.putExtra(Intent.EXTRA_SUBJECT, getSubject)
 
     startActivity(intent)
   }
 
-  private def determineContent: (String, String) = {
+  private def getRecipient: Array[String] = Array("%s <%s>".format(state.name.get, state.mail.get))
+  private def getText: String = getString(Intent.EXTRA_TEXT)
+  private def getSubject: String = {
+    val subject = getString(Intent.EXTRA_SUBJECT)
+    state.prefix match {
+      case None         => subject
+      case Some("")     => subject
+      case Some(prefix) => "[%s] %s".format(prefix, subject)
+    }
+  }
+
+  private def getString(id: String): String = {
     val intent = getIntent
     if (intent.getAction == Intent.ACTION_SEND)
-      (intent.getStringExtra(Intent.EXTRA_SUBJECT), intent.getStringExtra(Intent.EXTRA_TEXT))
+      intent getStringExtra id
     else
-      ("", "")
+      ""
   }
 
   private def configure {

@@ -25,14 +25,16 @@ import android.content.Context
 
 class State(val ctx: Context) {
   private val SETTINGS_ID = "state"
-  private val NAME_ID = "name"
-  private val MAIL_ID = "mail"
+  private val NAME_ID     = "name"
+  private val MAIL_ID     = "mail"
+  private val PREFIX_ID   = "prefix"
 
   private val prefs = ctx.getSharedPreferences(SETTINGS_ID, Context.MODE_PRIVATE)
 
-  def name = Option(prefs.getString(NAME_ID, null))
-
-  def mail = Option(prefs.getString(MAIL_ID, null))
+  def name   = Option(prefs.getString(NAME_ID, null))
+  def mail   = Option(prefs.getString(MAIL_ID, null))
+  def prefix = Option(prefs.getString(PREFIX_ID, null))
+  def prefix_=(prefix: String) = set(PREFIX_ID, prefix)
 
   def setNameAndMail(name: String, mail: String) {
     set(NAME_ID, name)
