@@ -30,12 +30,15 @@ import android.widget._
 import FindView._
 
 class AboutActivity extends Activity with FindView {
+  private lazy val state = new State(this)
+
   override def onCreate(savedInstanceState: Bundle) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.about)
     linkify(findView[TextView](R.id.about_explanation))
     linkify(findView[TextView](R.id.about_website))
     findView[Button](R.id.about_close).onClick { _ => finish }
+    find(R.id.about_line).setBackgroundResource(state.color)
   }
 
   private def linkify(textView: TextView) {

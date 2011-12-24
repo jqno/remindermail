@@ -24,41 +24,63 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:padding="30dip">
-    <TextView
-        android:id="@+id/about_explanation"
+    android:layout_height="wrap_content"
+    android:padding="10dip">
+    <ScrollView
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/about_explanation" />
-    <TextView
+        android:layout_height="fill_parent"
+        android:layout_marginBottom="50dip">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:padding="10dip">
+            <TextView
+                android:id="@+id/about_explanation"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:text="@string/about_explanation"
+                android:paddingBottom="10dip" />
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:text="@string/about_shortcut"
+                android:paddingBottom="10dip" />
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:text="@string/about_limitations"
+                android:paddingBottom="20dip" />
+            <View
+                android:id="@+id/about_line"
+                android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:layout_weight="1.0" />
+            <TextView
+                android:paddingTop="20dip"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:text="@string/about_copyright" />
+            <TextView
+                android:id="@+id/about_website"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:text="@string/about_website" />
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:text=" " />
+        </LinearLayout>
+    </ScrollView>
+    <RelativeLayout
+        android:layout_marginTop="-50dip"
+        android:gravity="bottom"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/about_shortcut" />
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/about_limitations" />
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text=" " />
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/about_copyright" />
-    <TextView
-        android:id="@+id/about_website"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/about_website" />
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text=" " />
-    <Button
-        android:id="@+id/about_close"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/about_close" />
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/about_close"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/about_close" />
+    </RelativeLayout>
 </LinearLayout>

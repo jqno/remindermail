@@ -22,12 +22,14 @@
 package nl.jqno.remindermail
 
 import android.content.Context
+import android.os.Build.VERSION
 
 class State(val ctx: Context) {
   private val SETTINGS_ID = "state"
   private val NAME_ID     = "name"
   private val MAIL_ID     = "mail"
   private val PREFIX_ID   = "prefix"
+  private val ICE_CREAM_SANDWICH = 14
 
   private val prefs = ctx.getSharedPreferences(SETTINGS_ID, Context.MODE_PRIVATE)
 
@@ -46,4 +48,7 @@ class State(val ctx: Context) {
     editor.putString(id, value)
     editor.commit()
   }
+
+  def color: Int =
+    if (VERSION.SDK_INT < ICE_CREAM_SANDWICH) R.color.android2 else R.color.android4
 }

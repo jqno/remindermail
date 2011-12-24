@@ -28,7 +28,6 @@ import android.content.Intent
 import android.database.Cursor
 import android.net.Uri
 import android.os.Bundle
-import android.os.Build.VERSION
 import android.view.ContextMenu
 import android.view.ContextMenu.ContextMenuInfo
 import android.view.MenuItem
@@ -39,7 +38,6 @@ import FindView._
 
 class ConfigActivity extends Activity with FindView {
   private val PICK_CONTACT = 1337
-  private val ICE_CREAM_SANDWICH = 14
   private val COLOR_LINES = List(
     R.id.config_step1_line,
     R.id.config_step2_line,
@@ -146,8 +144,7 @@ class ConfigActivity extends Activity with FindView {
   }
 
   private def paintColorLines {
-    val color = if (VERSION.SDK_INT < ICE_CREAM_SANDWICH) R.color.android2 else R.color.android4
-    COLOR_LINES foreach { find(_).setBackgroundResource(color) }
+    COLOR_LINES foreach { find(_).setBackgroundResource(state.color) }
   }
 
   private def paintMail {
