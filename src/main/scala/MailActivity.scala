@@ -42,22 +42,15 @@ class MailActivity extends Activity {
     intent.setType("message/rfc822")
 
     intent.putExtra(Intent.EXTRA_EMAIL, getRecipient)
-    intent.putExtra(Intent.EXTRA_TEXT, getText)
     intent.putExtra(Intent.EXTRA_SUBJECT, getSubject)
+    intent.putExtra(Intent.EXTRA_TEXT, getText)
 
     startActivity(intent)
   }
 
   private def getRecipient: Array[String] = Array("%s <%s>".format(state.name.get, state.mail.get))
+  private def getSubject: String = getString(Intent.EXTRA_SUBJECT)
   private def getText: String = getString(Intent.EXTRA_TEXT)
-  private def getSubject: String = {
-    val subject = getString(Intent.EXTRA_SUBJECT)
-    state.prefix match {
-      case None         => subject
-      case Some("")     => subject
-      case Some(prefix) => "[%s] %s".format(prefix, subject)
-    }
-  }
 
   private def getString(id: String): String = {
     val intent = getIntent

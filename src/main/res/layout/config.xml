@@ -194,58 +194,13 @@
             android:textStyle="bold"
             android:textSize="7pt"
             android:text="@string/config_step3_title" />
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="10dip">
-            <TextView
-                android:layout_width="0dip"
-                android:layout_height="fill_parent"
-                android:layout_weight="1.0"
-                android:textSize="6pt"
-                android:text="@string/config_step3_explanation" />
-            <Button
-                android:id="@+id/config_step3_go"
-                android:layout_width="0dip"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.3"
-                android:text="@string/config_step3_button" />
-        </LinearLayout>
         <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:textSize="6pt"
-            android:text="@string/config_step3_extra_explanation"
-            android:paddingBottom="10dip" />
-        <TextView
-            android:id="@+id/config_step3_empty"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1.0"
-            android:textStyle="italic"
             android:textSize="6pt"
-            android:text="@string/config_step3_empty"
+            android:text="@string/config_step3_explanation"
             android:paddingBottom="20dip" />
-       <TableLayout
-            android:id="@+id/config_step3_setting_box"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingBottom="20dip">
-            <TableRow>
-                <TextView
-                    android:paddingRight="10dip"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="6pt"
-                    android:text="@string/config_step3_prefix" />
-                <TextView
-                    android:id="@+id/config_step3_prefix"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="6pt" />
-            </TableRow>
-        </TableLayout>
 
         <!-- STEP 4 -->
         <View
@@ -264,38 +219,10 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1.0"
-            android:textStyle="bold"
-            android:textSize="7pt"
-            android:text="@string/config_step4_title" />
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1.0"
-            android:textSize="6pt"
-            android:text="@string/config_step4_explanation"
-            android:paddingBottom="20dip" />
-
-        <!-- STEP 5 -->
-        <View
-            android:id="@+id/config_step5_line"
-            android:layout_width="fill_parent"
-            android:layout_height="1px"
-            android:layout_weight="1.0" />
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1.0"
-            android:textStyle="bold"
-            android:textSize="7pt"
-            android:text="@string/config_step5" />
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1.0"
             android:paddingBottom="10dip"
             android:textStyle="bold"
             android:textSize="7pt"
-            android:text="@string/config_step5_title" />
+            android:text="@string/config_step4_title" />
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="fill_parent"
@@ -305,13 +232,13 @@
                 android:layout_width="0px"
                 android:layout_height="wrap_content"
                 android:layout_weight="1.0"
-                android:text="@string/config_step5_close" />
+                android:text="@string/config_step4_close" />
             <Button
                 android:id="@+id/config_about"
                 android:layout_width="0px"
                 android:layout_height="wrap_content"
                 android:layout_weight="1.0"
-                android:text="@string/config_step5_about" />
+                android:text="@string/config_step4_about" />
         </LinearLayout>
     </LinearLayout>
 </ScrollView>
