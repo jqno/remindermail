@@ -21,7 +21,9 @@
  along with ReminderMail.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <manifest 
-    android:versionName="0.1" android:versionCode="1" package="nl.jqno.remindermail" xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:versionName="0.2" android:versionCode="2"
+    package="nl.jqno.remindermail">
     
     <uses-sdk android:minSdkVersion="7"></uses-sdk>
 
