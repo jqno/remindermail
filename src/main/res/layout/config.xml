@@ -202,9 +202,9 @@
             android:text="@string/config_step3_explanation"
             android:paddingBottom="20dip" />
 
-        <!-- STEP 4 -->
+        <!-- DONE -->
         <View
-            android:id="@+id/config_step4_line"
+            android:id="@+id/config_done_line"
             android:layout_width="fill_parent"
             android:layout_height="1px"
             android:layout_weight="1.0" />
@@ -214,15 +214,8 @@
             android:layout_weight="1.0"
             android:textStyle="bold"
             android:textSize="7pt"
-            android:text="@string/config_step4" />
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1.0"
-            android:paddingBottom="10dip"
-            android:textStyle="bold"
-            android:textSize="7pt"
-            android:text="@string/config_step4_title" />
+            android:text="@string/config_done"
+            android:paddingBottom="10dip" />
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="fill_parent"
@@ -232,13 +225,13 @@
                 android:layout_width="0px"
                 android:layout_height="wrap_content"
                 android:layout_weight="1.0"
-                android:text="@string/config_step4_close" />
+                android:text="@string/config_done_close" />
             <Button
                 android:id="@+id/config_about"
                 android:layout_width="0px"
                 android:layout_height="wrap_content"
                 android:layout_weight="1.0"
-                android:text="@string/config_step4_about" />
+                android:text="@string/config_done_about" />
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

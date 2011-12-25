@@ -41,7 +41,7 @@ class ConfigActivity extends Activity with FindView {
     R.id.config_step1_line,
     R.id.config_step2_line,
     R.id.config_step3_line,
-    R.id.config_step4_line
+    R.id.config_done_line
   )
 
   private lazy val state = new State(this)
