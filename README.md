@@ -4,6 +4,7 @@ ReminderMail
 Do you email reminders to yourself? Do you use a ToDo app that you can send emails to? Or do you have this one special person that you just have to mail ALL THE TIME? Then ReminderMail is the app for you.
 
 With ReminderMail, you can quickly send e-mail to a pre-defined address. It could be:
+
 * Your own
 * Your online ToDo-list application (such as [NirvanaHQ](http://www.nirvanahq.com))
 * Your blog (such as [Posterous](https://posterous.com/))
@@ -12,6 +13,7 @@ With ReminderMail, you can quickly send e-mail to a pre-defined address. It coul
 Download the app from the [Android Market](https://market.android.com/details?id=nl.jqno.remindermail)!
 
 Instructions for use:
+
 * Make sure you have a contact for the e-mail address you want to use.
 * Open the ReminderMail Configuration app and select the contact.
 * Move the ReminderMail app icon to your home screen.
