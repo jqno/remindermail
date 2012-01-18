@@ -7,6 +7,7 @@ object General {
   val settings = Defaults.defaultSettings ++ Seq (
     name := "ReminderMail",
     version := "0.2",
+    versionCode := 2,
     scalaVersion := "2.9.0-1",
     platformName in Android := "android-7"
   )
@@ -25,7 +26,7 @@ object AndroidBuild extends Build {
   lazy val main = Project (
     "ReminderMail",
     file("."),
-    settings = General.fullAndroidSettings
+    settings = General.fullAndroidSettings ++ AndroidManifestGenerator.settings
   )
 
   lazy val tests = Project (
