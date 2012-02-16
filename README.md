@@ -6,7 +6,7 @@ Do you email reminders to yourself? Do you use a ToDo app that you can send emai
 With ReminderMail, you can quickly send e-mail to a pre-defined address. It could be:
 
 * Your own
-* Your online ToDo-list application (such as [NirvanaHQ](http://www.nirvanahq.com))
+* Your online ToDo-list application (such as [Toodledo](http://www.toodledo.com) or [NirvanaHQ](http://www.nirvanahq.com))
 * Your blog (such as [Posterous](https://posterous.com/))
 * Your significant other
 
