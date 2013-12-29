@@ -194,7 +194,53 @@
             android:layout_height="wrap_content"
             android:layout_weight="1.0"
             android:textSize="6pt"
-            android:text="@string/config_step3_explanation"
+            android:text="@string/config_step3_explanation" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="20dip">
+            <EditText
+                android:id="@+id/config_step3_tag"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:inputType="text"
+                android:imeOptions="actionNone" />
+            <Button
+                android:id="@+id/config_step3_clear"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
+                android:text="@string/config_step3_button" />
+        </LinearLayout>
+
+        <!-- STEP 4 -->
+        <View
+            android:id="@+id/config_step4_line"
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:layout_weight="1.0" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:textStyle="bold"
+            android:textSize="7pt"
+            android:text="@string/config_step4" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:textStyle="bold"
+            android:textSize="7pt"
+            android:text="@string/config_step4_title" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:textSize="6pt"
+            android:text="@string/config_step4_explanation"
             android:paddingBottom="20dip" />
 
         <!-- DONE -->

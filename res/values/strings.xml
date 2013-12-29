@@ -27,7 +27,7 @@
     <string name="config_app_name">ReminderMail Configuration</string>
 
     <string name="config_step0_remindermail">ReminderMail</string>
-    <string name="config_step0_intro">So, you want to send yourself reminders. That\'s cool! But first, we need to set everything up. Don\'t worry, it\'s easy. Just follow these three simple steps.</string>
+    <string name="config_step0_intro">So, you want to send yourself reminders. That\'s cool! But first, we need to set everything up. Don\'t worry, it\'s easy. Just follow these four simple steps.</string>
 
     <string name="config_step1">Step 1</string>
     <string name="config_step1_title">Make sure you have a Google Contact for the e-mail address you want to use</string>
@@ -43,8 +43,13 @@
     <string name="config_step2_mail">E-mail:</string>
 
     <string name="config_step3">Step 3</string>
-    <string name="config_step3_title">Put the ReminderMail icon on your home screen</string>
-    <string name="config_step3_explanation">You\'ll have to do that yourself. But it\'s totally worth it, because that way, ReminderMail will always be within reach!</string>
+    <string name="config_step3_title">Add a tag</string>
+    <string name="config_step3_explanation">Want to have a tag that always appears on the subject line? Add one here! If you leave this empty, there will be no tag.</string>
+    <string name="config_step3_button">Clear</string>
+
+    <string name="config_step4">Step 4</string>
+    <string name="config_step4_title">Put the ReminderMail icon on your home screen</string>
+    <string name="config_step4_explanation">You\'ll have to do that yourself. But it\'s totally worth it, because that way, ReminderMail will always be within reach!</string>
 
     <string name="config_done">Done!</string>
     <string name="config_done_close">Get me out of here</string>

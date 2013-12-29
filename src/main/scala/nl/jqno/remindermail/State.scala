@@ -28,19 +28,25 @@ class State(val ctx: Context) {
   private val SettingsId = "state"
   private val NameId     = "name"
   private val MailId     = "mail"
+  private val TagId      = "tag"
   private val IceCreamSandwich = 14
 
   private val prefs = ctx.getSharedPreferences(SettingsId, Context.MODE_PRIVATE)
 
-  def name = Option(prefs.getString(NameId, null))
-  def mail = Option(prefs.getString(MailId, null))
+  def name: Option[String] = Option(prefs.getString(NameId, null))
+  def mail: Option[String] = Option(prefs.getString(MailId, null))
+  def tag: String = prefs.getString(TagId, "ReminderMail")
 
-  def setNameAndMail(name: String, mail: String) {
+  def setNameAndMail(name: String, mail: String): Unit = {
     set(NameId, name)
     set(MailId, mail)
   }
 
-  private def set(id: String, value: String) {
+  def setTag(tag: String): Unit = {
+    set(TagId, tag)
+  }
+
+  private def set(id: String, value: String): Unit = {
     val editor = prefs.edit
     editor.putString(id, value)
     editor.commit()

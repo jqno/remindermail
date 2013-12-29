@@ -40,6 +40,7 @@ class ConfigActivity extends Activity with FindView {
     R.id.config_step1_line,
     R.id.config_step2_line,
     R.id.config_step3_line,
+    R.id.config_step4_line,
     R.id.config_done_line
   )
 
@@ -53,8 +54,15 @@ class ConfigActivity extends Activity with FindView {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.config)
     findView[Button](R.id.config_step2_go) onClick selectMail()
+    findView[Button](R.id.config_step3_clear) onClick clearTag()
     findView[Button](R.id.config_done) onClick finish()
     findView[Button](R.id.config_about) onClick about()
+
+    val edit = findView[EditText](R.id.config_step3_tag)
+    edit.setSelection(edit.getText.length)
+    edit.setText(state.tag)
+    edit onTextChanged tagChanged()
+
     findView[ScrollView](R.id.config_scroller).fullScroll(View.FOCUS_UP)
     registerForContextMenu(contextMenuView)
 
@@ -70,6 +78,17 @@ class ConfigActivity extends Activity with FindView {
   private def about(): Unit = {
     val intent = new Intent(this, classOf[AboutActivity])
     startActivity(intent)
+  }
+
+  private def clearTag(): Unit = {
+    findView[EditText](R.id.config_step3_tag).setText("")
+    state.setTag("")
+  }
+
+  private def tagChanged(): Unit = {
+    val edit = findView[EditText](R.id.config_step3_tag)
+    val tag = edit.getText.toString
+    state.setTag(tag)
   }
 
   override def onActivityResult(reqCode: Int, resultCode: Int, data: Intent): Unit = {

@@ -47,7 +47,8 @@
         <activity android:label="@string/config_app_name"
             android:name=".ConfigActivity"
             android:icon="@drawable/config_icon"
-            android:taskAffinity="nl.jqno.remindermail.ConfigTask">
+            android:taskAffinity="nl.jqno.remindermail.ConfigTask"
+            android:windowSoftInputMode="stateUnchanged">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"></action>
                 <category android:name="android.intent.category.LAUNCHER"></category>

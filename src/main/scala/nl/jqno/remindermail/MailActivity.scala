@@ -49,8 +49,15 @@ class MailActivity extends Activity {
   }
 
   private def getRecipient: Array[String] = Array("%s <%s>".format(state.name.get, state.mail.get))
-  private def getSubject: String = getString(Intent.EXTRA_SUBJECT)
   private def getText: String = getString(Intent.EXTRA_TEXT)
+  private def getSubject: String = {
+    val tag = s"[${state.tag}]"
+    val subject = getString(Intent.EXTRA_SUBJECT)
+    if (subject.isEmpty)
+      tag
+    else
+      s"$tag $subject"
+  }
 
   private def getString(id: String): String = {
     val intent = getIntent

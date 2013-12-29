@@ -24,6 +24,8 @@ package nl.jqno.remindermail
 import android.app.Activity
 import android.view.View
 import scala.language.implicitConversions
+import android.widget.EditText
+import android.text.{Editable, TextWatcher}
 
 trait FindView extends Activity {
   def findView[WidgetType <: View](id: Int): WidgetType = findViewById(id).asInstanceOf[WidgetType]
@@ -31,13 +33,28 @@ trait FindView extends Activity {
 }
 
 class ViewWithOnClick(view: View) {
-  def onClick(action: => Any): Unit = {
+  def onClick(action: => Unit): Unit = {
     view.setOnClickListener(new View.OnClickListener() {
       def onClick(v: View): Unit = action
     })
   }
 }
 
-object FindView extends Activity {
-  implicit def addOnClickToViews(view: View): ViewWithOnClick = new ViewWithOnClick(view)
+class EditTextWithOnTextChanged(editText: EditText) {
+  def onTextChanged(action: => Unit): Unit = {
+    editText.addTextChangedListener(new TextWatcher {
+      def beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int): Unit = ()
+      def onTextChanged(s: CharSequence, start: Int, before: Int, count: Int): Unit = ()
+      def afterTextChanged(s: Editable): Unit = action
+    })
+  }
 }
+
+object FindView extends Activity {
+  implicit def addOnClickToViews(view: View): ViewWithOnClick =
+    new ViewWithOnClick(view)
+
+  implicit def addOnTextChangedToEditTexts(editText: EditText): EditTextWithOnTextChanged =
+    new EditTextWithOnTextChanged(editText)
+}
+
