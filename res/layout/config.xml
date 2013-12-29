@@ -124,7 +124,7 @@
             <Button
                 android:id="@+id/config_step2_go"
                 android:layout_width="0dip"
-                android:layout_height="wrap_content"
+                android:layout_height="fill_parent"
                 android:layout_weight="0.3"
                 android:text="@string/config_step2_button" />
         </LinearLayout>
