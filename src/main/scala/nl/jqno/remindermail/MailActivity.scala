@@ -30,14 +30,14 @@ class MailActivity extends Activity {
 
   override def onCreate(savedInstanceState: Bundle) {
     super.onCreate(savedInstanceState)
-    state.mail match {
-      case Some(_) => mail
-      case None    => configure
-    }
+    if (state.mail.isDefined)
+      mail()
+    else
+      configure()
     finish()
   }
 
-  private def mail {
+  private def mail(): Unit = {
     val intent = new Intent(Intent.ACTION_SEND)
     intent.setType("message/rfc822")
 
@@ -60,7 +60,7 @@ class MailActivity extends Activity {
       ""
   }
 
-  private def configure {
+  private def configure(): Unit = {
     val intent = new Intent(this, classOf[ConfigActivity])
     startActivity(intent)
   }

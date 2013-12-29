@@ -22,7 +22,6 @@
 package nl.jqno.remindermail
 
 import android.app.Activity
-import android.content.Context._
 import android.content.Intent
 import android.database.Cursor
 import android.net.Uri
@@ -36,8 +35,8 @@ import android.widget._
 import FindView._
 
 class ConfigActivity extends Activity with FindView {
-  private val PICK_CONTACT = 1337
-  private val COLOR_LINES = List(
+  private val PickContact = 1337
+  private val ColorLines = List(
     R.id.config_step1_line,
     R.id.config_step2_line,
     R.id.config_step3_line,
@@ -48,51 +47,51 @@ class ConfigActivity extends Activity with FindView {
   private lazy val contextMenuView = find(R.id.config_invisible_context_menu_view)
 
   private var nameCandidate = ""
-  private var emailCandidates = List[String]()
+  private var emailCandidates = List.empty[String]
 
-  override def onCreate(savedInstanceState: Bundle) {
+  override def onCreate(savedInstanceState: Bundle): Unit = {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.config)
-    findView[Button](R.id.config_step2_go).onClick { _ => select_mail }
-    findView[Button](R.id.config_done).onClick     { _ => finish      }
-    findView[Button](R.id.config_about).onClick    { _ => about       }
+    findView[Button](R.id.config_step2_go) onClick selectMail()
+    findView[Button](R.id.config_done) onClick finish()
+    findView[Button](R.id.config_about) onClick about()
     findView[ScrollView](R.id.config_scroller).fullScroll(View.FOCUS_UP)
     registerForContextMenu(contextMenuView)
 
-    paintColorLines
-    paintMail
+    paintColorLines()
+    paintMail()
   }
 
-  private def select_mail {
+  private def selectMail(): Unit = {
     val intent = new Intent(Intent.ACTION_PICK, Contacts.CONTENT_URI)
-    startActivityForResult(intent, PICK_CONTACT)
+    startActivityForResult(intent, PickContact)
   }
 
-  private def about {
+  private def about(): Unit = {
     val intent = new Intent(this, classOf[AboutActivity])
     startActivity(intent)
   }
 
-  override def onActivityResult(reqCode: Int, resultCode: Int, data: Intent) {
+  override def onActivityResult(reqCode: Int, resultCode: Int, data: Intent): Unit = {
     super.onActivityResult(reqCode, resultCode, data)
 
     reqCode match {
-      case PICK_CONTACT =>
+      case PickContact =>
         if (resultCode == Activity.RESULT_OK) {
           updateSettings(data.getData)
         }
     }
   }
 
-  private def updateSettings(contact: Uri) {
+  private def updateSettings(contact: Uri): Unit = {
     val contactCursor = managedQuery(contact, null, null, null, null)
     if (contactCursor.moveToFirst()) {
       val id = getString(contactCursor, Contacts.LOOKUP_KEY)
 
       nameCandidate = getString(contactCursor, Contacts.DISPLAY_NAME)
-      emailCandidates = List[String]()
+      emailCandidates = List.empty[String]
 
-      val mailCursor = managedQuery(Contacts.EMAIL_CONTENT_URI, null, Contacts.EMAIL_CONTACT_ID + " = ?", Array(id), null)
+      val mailCursor = managedQuery(Contacts.EMAIL_CONTENT_URI, null, s"${Contacts.EMAIL_CONTACT_ID} = ?", Array(id), null)
       while (mailCursor.moveToNext()) {
         val e = getString(mailCursor, Contacts.EMAIL_DATA)
         emailCandidates = e :: emailCandidates
@@ -100,7 +99,7 @@ class ConfigActivity extends Activity with FindView {
 
       if (emailCandidates.size == 1) {
         state.setNameAndMail(nameCandidate, emailCandidates(0))
-        paintMail
+        paintMail()
       }
       else {
         openContextMenu(contextMenuView)
@@ -108,42 +107,40 @@ class ConfigActivity extends Activity with FindView {
     }
   }
 
-  private def getString(cursor: Cursor, id: String) =
+  private def getString(cursor: Cursor, id: String): String =
     cursor.getString(cursor getColumnIndex id)
 
-  override def onCreateContextMenu(menu: ContextMenu, v: View, menuInfo: ContextMenuInfo) {
+  override def onCreateContextMenu(menu: ContextMenu, v: View, menuInfo: ContextMenuInfo): Unit = {
     super.onCreateContextMenu(menu, v, menuInfo)
     menu.setHeaderTitle(R.string.config_step2_pick_mail)
-    emailCandidates.zipWithIndex foreach {
-      case (email, index) => menu.add(0, index, 0, email)
+    for ((email, index) <- emailCandidates.zipWithIndex) {
+      menu.add(0, index, 0, email)
     }
   }
 
   override def onContextItemSelected(item: MenuItem): Boolean = {
     state.setNameAndMail(nameCandidate, emailCandidates(item.getItemId))
-    paintMail
+    paintMail()
     return true
   }
 
-  private def paintColorLines {
-    COLOR_LINES foreach { find(_).setBackgroundResource(state.color) }
-  }
+  private def paintColorLines(): Unit =
+    for (line <- ColorLines) { find(line).setBackgroundResource(state.color) }
 
-  private def paintMail {
-    state.mail match {
-      case None    => hideMail
-      case Some(_) => showMail
-    }
-  }
+  private def paintMail(): Unit =
+    if (state.mail.isDefined)
+      showMail()
+    else
+      hideMail()
 
-  private def showMail {
+  private def showMail(): Unit = {
     findView[TextView](R.id.config_step2_name).setText(state.name.get)
     findView[TextView](R.id.config_step2_mail).setText(state.mail.get)
     findView[TextView](R.id.config_step2_empty).setVisibility(View.GONE)
     findView[TableLayout](R.id.config_step2_setting_box).setVisibility(View.VISIBLE)
   }
 
-  private def hideMail {
+  private def hideMail(): Unit = {
     findView[TextView](R.id.config_step2_name).setText("")
     findView[TextView](R.id.config_step2_mail).setText("")
     findView[TextView](R.id.config_step2_empty).setVisibility(View.VISIBLE)

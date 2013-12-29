@@ -23,7 +23,6 @@ package nl.jqno.remindermail
 
 import android.app.Activity
 import android.view.View
-import android.view.View.OnClickListener
 import scala.language.implicitConversions
 
 trait FindView extends Activity {
@@ -32,13 +31,13 @@ trait FindView extends Activity {
 }
 
 class ViewWithOnClick(view: View) {
-  def onClick(action: View => Any) {
+  def onClick(action: => Any): Unit = {
     view.setOnClickListener(new View.OnClickListener() {
-      def onClick(v: View) { action(v) }
+      def onClick(v: View): Unit = action
     })
   }
 }
 
 object FindView extends Activity {
-  implicit def addOnClickToViews(view: View) = new ViewWithOnClick(view)
+  implicit def addOnClickToViews(view: View): ViewWithOnClick = new ViewWithOnClick(view)
 }
