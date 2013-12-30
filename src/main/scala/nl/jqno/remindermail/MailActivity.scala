@@ -24,9 +24,11 @@ package nl.jqno.remindermail
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.net.Uri
 import android.text.TextUtils
 
 class MailActivity extends Activity {
+  private val AcceptedAttachmentTypes = List("image/", "application/pdf", "application/x-pdf")
   private lazy val state = new State(this)
 
   override def onCreate(savedInstanceState: Bundle) {
@@ -46,11 +48,13 @@ class MailActivity extends Activity {
     intent.putExtra(Intent.EXTRA_SUBJECT, getSubject)
     intent.putExtra(Intent.EXTRA_TEXT, getText)
 
+    getAttachment foreach { intent.putExtra(Intent.EXTRA_STREAM, _) }
+
     startActivity(intent)
   }
 
   private def getRecipient: Array[String] = Array("%s <%s>".format(state.name.get, state.mail.get))
-  private def getText: String = getString(Intent.EXTRA_TEXT)
+
   private def getSubject: String = {
     val tag = s"[${state.tag}]"
     val subject = getString(Intent.EXTRA_SUBJECT)
@@ -58,6 +62,18 @@ class MailActivity extends Activity {
       tag
     else
       s"$tag $subject"
+  }
+
+  private def getText: String = getString(Intent.EXTRA_TEXT)
+
+  private def getAttachment: Option[Uri] = {
+    val intent = getIntent
+    val isActionSend = intent.getAction == Intent.ACTION_SEND
+    val isTypeOk = AcceptedAttachmentTypes exists (intent.getType startsWith _)
+    if (isActionSend && isTypeOk)
+      Some(intent getParcelableExtra Intent.EXTRA_STREAM)
+    else
+      None
   }
 
   private def getString(id: String): String = {
