@@ -59,8 +59,8 @@ class ConfigActivity extends Activity with FindView {
     findView[Button](R.id.config_about) onClick about()
 
     val edit = findView[EditText](R.id.config_step3_tag)
-    edit.setSelection(edit.getText.length)
     edit.setText(state.tag)
+    edit.setSelection(edit.getText.length)
     edit onTextChanged tagChanged()
 
     findView[ScrollView](R.id.config_scroller).fullScroll(View.FOCUS_UP)

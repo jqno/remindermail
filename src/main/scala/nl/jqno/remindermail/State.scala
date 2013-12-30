@@ -43,7 +43,7 @@ class State(val ctx: Context) {
   }
 
   def setTag(tag: String): Unit = {
-    set(TagId, tag)
+    set(TagId, tag.trim)
   }
 
   private def set(id: String, value: String): Unit = {
