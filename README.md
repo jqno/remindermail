@@ -24,6 +24,6 @@ Note that ReminderMail only supports one e-mail address.
 
 If you want to report an issue, or contact the author, send an e-mail to jqno.android@gmail.com
 
-Copyright (C) 2011 by Jan Ouwens
+Copyright (C) 2011, 2013 by Jan Ouwens
 This program is free software, released under the GNU General Public License.
 For more information, see the [License document](https://raw.github.com/jqno/remindermail/master/COPYING).
