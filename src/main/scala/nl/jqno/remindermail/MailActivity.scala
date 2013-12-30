@@ -24,6 +24,7 @@ package nl.jqno.remindermail
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.text.TextUtils
 
 class MailActivity extends Activity {
   private lazy val state = new State(this)
@@ -53,7 +54,7 @@ class MailActivity extends Activity {
   private def getSubject: String = {
     val tag = s"[${state.tag}]"
     val subject = getString(Intent.EXTRA_SUBJECT)
-    if (subject.isEmpty)
+    if (TextUtils.isEmpty(subject))
       tag
     else
       s"$tag $subject"
