@@ -7,10 +7,10 @@ With ReminderMail, you can quickly send e-mail to a pre-defined address. It coul
 
 * Your own
 * Your online ToDo-list application (such as [Toodledo](http://www.toodledo.com) or [NirvanaHQ](http://www.nirvanahq.com))
-* Your blog (such as [Posterous](https://posterous.com/))
+* Your blog (such as [Tumblr](http://www.tumblr.com/docs/nl/email_publishing) or [Wordpress](http://codex.wordpress.org/Post_to_your_blog_using_email))
 * Your significant other
 
-Download the app from the [Android Market](https://market.android.com/details?id=nl.jqno.remindermail)!
+Download the app from [Google Play](https://play.google.com/store/apps/details?id=nl.jqno.remindermail)!
 
 Instructions for use:
 
