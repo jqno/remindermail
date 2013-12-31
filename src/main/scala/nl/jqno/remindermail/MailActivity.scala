@@ -72,8 +72,9 @@ class MailActivity extends Activity {
 
   private def getAttachment: Option[Uri] = {
     val intent = getIntent
+    val intentType = intent.getType
     val isActionSend = intent.getAction == Intent.ACTION_SEND
-    val isTypeOk = AcceptedAttachmentTypes exists (intent.getType startsWith _)
+    val isTypeOk = (intentType != null) && (AcceptedAttachmentTypes exists (intentType startsWith _))
     if (isActionSend && isTypeOk)
       Some(intent getParcelableExtra Intent.EXTRA_STREAM)
     else
