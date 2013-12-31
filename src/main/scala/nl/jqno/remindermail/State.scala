@@ -35,7 +35,11 @@ class State(val ctx: Context) {
 
   def name: Option[String] = Option(prefs.getString(NameId, null))
   def mail: Option[String] = Option(prefs.getString(MailId, null))
-  def tag: String = prefs.getString(TagId, "ReminderMail")
+  def tag: String = prefs.getString(TagId, null) match {
+    case null if name.isDefined => "" // Upgrade scenario: leave tag empty
+    case null => "ReminderMail"
+    case s: String => s
+  }
 
   def setNameAndMail(name: String, mail: String): Unit = {
     set(NameId, name)
