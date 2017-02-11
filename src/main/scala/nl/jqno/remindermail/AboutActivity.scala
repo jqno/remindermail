@@ -36,6 +36,7 @@ class AboutActivity extends Activity with FindView {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.about)
     linkify(findView[TextView](R.id.about_explanation))
+    linkify(findView[TextView](R.id.about_privacy))
     linkify(findView[TextView](R.id.about_website))
     findView[Button](R.id.about_close) onClick finish()
     find(R.id.about_line).setBackgroundResource(state.color)
