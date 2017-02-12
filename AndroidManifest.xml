@@ -23,6 +23,8 @@
 <manifest 
     xmlns:android="http://schemas.android.com/apk/res/android"
     package="nl.jqno.remindermail"
+    android:versionCode="5"
+    android:versionName="0.5"
     android:debuggable="false">
     
     <uses-sdk android:minSdkVersion="7"></uses-sdk>

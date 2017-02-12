@@ -25,7 +25,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>nl.jqno.remindermail</groupId>
 	<artifactId>remindermail</artifactId>
-	<version>0.4</version>
+	<version>0.5</version>
 	<packaging>apk</packaging>
 	<name>ReminderMail</name>
 
