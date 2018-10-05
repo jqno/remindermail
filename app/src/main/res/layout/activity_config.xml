@@ -96,6 +96,7 @@
                 android:textStyle="italic" />
 
             <TableLayout
+                android:id="@+id/step2_settingbox"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:paddingBottom="20dip">
