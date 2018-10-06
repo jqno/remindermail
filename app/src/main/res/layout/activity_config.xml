@@ -7,6 +7,7 @@
     tools:context=".ConfigActivity">
 
     <ScrollView
+        android:id="@+id/config_scroller"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -16,6 +17,12 @@
             android:orientation="vertical"
             android:paddingLeft="10dip"
             android:paddingRight="10dip">
+
+            <TextView
+                android:id="@+id/config_invisible_context_menu"
+                android:layout_width="0dip"
+                android:layout_height="0dip"
+                android:visibility="gone" />
 
             <TextView
                 android:layout_width="match_parent"

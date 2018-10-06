@@ -13,12 +13,12 @@ import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
+import android.view.ContextMenu
+import android.view.MenuItem
 import android.view.View
 import android.view.WindowManager
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_config.*
-import java.lang.IllegalStateException
 
 const val pickContact = 1337
 
@@ -32,6 +32,8 @@ class ConfigActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_config)
         window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN)
+        config_scroller.fullScroll(View.FOCUS_UP)
+        registerForContextMenu(config_invisible_context_menu)
 
         step2_go.setOnClickListener { selectMail() }
         step3_clear.setOnClickListener { clearTag() }
@@ -48,6 +50,8 @@ class ConfigActivity : AppCompatActivity() {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
 
         })
+
+        paintMail()
     }
 
     private fun selectMail() {
@@ -106,7 +110,7 @@ class ConfigActivity : AppCompatActivity() {
                         paintMail()
                     }
                     else -> {
-                        TODO("contextmenu shizzle")
+                        openContextMenu(config_invisible_context_menu)
                     }
                 }
             }
@@ -129,5 +133,19 @@ class ConfigActivity : AppCompatActivity() {
             step2_empty.visibility = View.GONE
             step2_settingbox.visibility = View.VISIBLE
         }
+    }
+
+    override fun onCreateContextMenu(menu: ContextMenu?, v: View?, menuInfo: ContextMenu.ContextMenuInfo?) {
+        super.onCreateContextMenu(menu, v, menuInfo)
+        menu?.setHeaderTitle(R.string.config_step2_pick_mail)
+        emailCandidates.withIndex().forEach {
+            menu?.add(0, it.index, 0, it.value)
+        }
+    }
+
+    override fun onContextItemSelected(item: MenuItem?): Boolean {
+        state.setNameAndMail(nameCandidate, emailCandidates[item!!.itemId])
+        paintMail()
+        return true
     }
 }
