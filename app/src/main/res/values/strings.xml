@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">ReminderMail</string>
-
     <string name="config_app_name">Configure ReminderMail</string>
+    <string name="sharebox_app_name">\@ ReminderMail</string>
 
     <string name="config_step0_intro">So, you want to send yourself reminders. That\'s cool! But first, we need to set everything up. Don\'t worry, it\'s easy. Just follow these four simple steps.</string>
 
