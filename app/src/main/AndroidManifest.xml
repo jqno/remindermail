@@ -44,7 +44,9 @@
 
         <activity
             android:name=".ConfigActivity"
-            android:label="@string/config_app_name">
+            android:label="@string/config_app_name"
+            android:icon="@mipmap/ic_launcher_config"
+            android:roundIcon="@mipmap/ic_launcher_config_round">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
