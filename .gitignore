@@ -1,11 +1,9 @@
-# Generated files
-target/
-gen/
-
-# IntelliJ IDEA
 *.iml
-*.ipr
-*.iws
-
-# Signing
-*.keystore
+.gradle
+/local.properties
+.idea
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+app/release

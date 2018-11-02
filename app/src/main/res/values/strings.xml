@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">ReminderMail</string>
+    <string name="config_app_name">ReminderMail Configure</string>
+    <string name="sharebox_app_name">\@ ReminderMail</string>
+
+    <string name="config_step0_intro">So, you want to send yourself reminders. That\'s cool! But first, we need to set everything up. Don\'t worry, it\'s easy. Just follow these four simple steps.</string>
+
+    <string name="config_step1">Step 1</string>
+    <string name="config_step1_title">Make sure you have a Google Contact for the e-mail address you want to use</string>
+    <string name="config_step1_explanation">If you don\'t have one, you can create one now. Go ahead, I\'ll wait.</string>
+
+    <string name="config_step2">Step 2</string>
+    <string name="config_step2_title">Choose an e-mail address</string>
+    <string name="config_step2_explanation">To choose an e-mail address, press the button and select a contact from the list.</string>
+    <string name="config_step2_button">GO</string>
+    <string name="config_step2_pick_mail">Choose an e-mail address</string>
+    <string name="config_step2_empty">You haven\'t selected an e-mail address yet.</string>
+    <string name="config_step2_name">Name:</string>
+    <string name="config_step2_mail">E-mail:</string>
+
+    <string name="config_step3">Step 3</string>
+    <string name="config_step3_title">Add a tag</string>
+    <string name="config_step3_explanation">Want to have a tag that always appears on the subject line? Add one here! If you leave this empty, there will be no tag.</string>
+    <string name="config_step3_button">Clear</string>
+
+    <string name="config_step4">Step 4</string>
+    <string name="config_step4_title">Put the ReminderMail icon on your home screen</string>
+    <string name="config_step4_explanation">You\'ll have to do that yourself. But it\'s totally worth it, because that way, ReminderMail will always be within reach!</string>
+
+    <string name="config_done">Done!</string>
+    <string name="config_done_close">Get me out of here</string>
+    <string name="config_done_about">About this app</string>
+
+    <string name="about_app_name">About ReminderMail</string>
+    <string name="about_explanation">\
+ReminderMail is an app that will let you quickly send e-mail to a pre-defined address.
+This is useful to quickly send reminders to yourself, or to an online ToDo-list application (such as &lt;a href=\"http://www.nirvanahq.com\">NirvanaHQ&lt;/a> or &lt;a href=\"http://www.toodledo.com\">Toodledo&lt;/a>).
+    </string>
+    <string name="about_shortcut">Move the ReminderMail icon to your home screen for easy access, or share pages via \"@ ReminderMail\".</string>
+    <string name="about_limitations">Note that ReminderMail only supports one e-mail address.</string>
+    <string name="about_privacy">Read the &lt;a href=\"http://jqno.nl/remindermail/privacy.html\">privacy policy&lt;/a>.</string>
+    <string name="about_copyright">Copyright © 2011, 2013, 2018 by Jan Ouwens</string>
+    <string name="about_website">\
+This program is free software, released under the GNU General Public License.
+For more information, visit the &lt;a href=\"http://jqno.nl/remindermail\">website&lt;/a>.
+    </string>
+    <string name="about_close">Close</string>
+
+</resources>
