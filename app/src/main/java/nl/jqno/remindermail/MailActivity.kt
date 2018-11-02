@@ -15,7 +15,7 @@ class MailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportActionBar?.setDisplayShowTitleEnabled(false)
-        if (state.mail() == null)
+        if (state.mail == null)
             configure()
         else
             mail()
@@ -40,10 +40,10 @@ class MailActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    private fun getRecipient() = arrayOf("%s <%s>".format(state.name()!!, state.mail()!!))
+    private fun getRecipient() = arrayOf("%s <%s>".format(state.name!!, state.mail!!))
 
     private fun getSubject(): String {
-        val tag = state.tag()
+        val tag = state.tag
         val subject = getString(Intent.EXTRA_SUBJECT)
         val hasTag = !TextUtils.isEmpty(tag)
         val hasSubject = !TextUtils.isEmpty(subject)

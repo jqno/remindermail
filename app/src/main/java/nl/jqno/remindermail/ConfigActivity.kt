@@ -40,7 +40,7 @@ class ConfigActivity : AppCompatActivity() {
         done.setOnClickListener { finish() }
         about.setOnClickListener { openAbout() }
 
-        step3_tag.setText(state.tag())
+        step3_tag.setText(state.tag)
         step3_tag.setSelection(step3_tag.text.length)
         step3_tag.addTextChangedListener(object: TextWatcher {
             override fun afterTextChanged(s: Editable?) {
@@ -57,13 +57,15 @@ class ConfigActivity : AppCompatActivity() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.READ_CONTACTS), pickContact)
         }
-        val intent = Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI)
-        startActivityForResult(intent, pickContact)
+        else {
+            val intent = Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI)
+            startActivityForResult(intent, pickContact)
+        }
     }
 
     private fun clearTag() {
         step3_tag.setText("")
-        state.setTag("")
+        state.tag = ""
     }
 
     private fun openAbout() {
@@ -72,8 +74,7 @@ class ConfigActivity : AppCompatActivity() {
     }
 
     private fun tagChanged() {
-        val tag = step3_tag.text.toString()
-        state.setTag(tag)
+        state.tag = step3_tag.text.toString()
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -120,15 +121,15 @@ class ConfigActivity : AppCompatActivity() {
             cursor.getString(cursor.getColumnIndex(id))
 
     private fun paintMail() {
-        if (state.mail() == null) {
+        if (state.mail == null) {
             step2_name.text = ""
             step2_email.text = ""
             step2_empty.visibility = View.VISIBLE
             step2_settingbox.visibility = View.GONE
         }
         else {
-            step2_name.text = state.name()!!
-            step2_email.text = state.mail()!!
+            step2_name.text = state.name!!
+            step2_email.text = state.mail!!
             step2_empty.visibility = View.GONE
             step2_settingbox.visibility = View.VISIBLE
         }

@@ -10,26 +10,27 @@ const val tagId = "tag"
 class State(ctx: Context) {
     private val prefs = ctx.getSharedPreferences(settingsId, Context.MODE_PRIVATE)
 
-    fun name(): String? = prefs.getString(nameId, null)
-    fun mail(): String? = prefs.getString(mailId, null)
-    fun tag(): String {
-        val tag = prefs.getString(tagId, null)
-        if (tag == null && name() == null)
-            return ""
-        else if (tag == null)
-            return "ReminderMail"
-        else
-            return tag
-    }
+    val name: String? get() = prefs.getString(nameId, null)
+    val mail: String? get() = prefs.getString(mailId, null)
 
     fun setNameAndMail(name: String, mail: String) {
         set(nameId, name)
         set(mailId, mail)
     }
 
-    fun setTag(tag: String) {
-        set(tagId, tag)
-    }
+    var tag: String
+        get() {
+            val tag = prefs.getString(tagId, null)
+            return if (tag == null && name == null)
+                ""
+            else if (tag == null)
+                "ReminderMail"
+            else
+                tag
+        }
+        set(value) {
+            set(tagId, value)
+        }
 
     private fun set(id: String, value: String) {
         val editor = prefs.edit()
