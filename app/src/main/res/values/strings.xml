@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">ReminderMail</string>
-    <string name="config_app_name">Configure ReminderMail</string>
+    <string name="config_app_name">ReminderMail Configure</string>
     <string name="sharebox_app_name">\@ ReminderMail</string>
 
     <string name="config_step0_intro">So, you want to send yourself reminders. That\'s cool! But first, we need to set everything up. Don\'t worry, it\'s easy. Just follow these four simple steps.</string>
@@ -39,10 +39,10 @@ This is useful to quickly send reminders to yourself, or to an online ToDo-list 
     <string name="about_shortcut">Move the ReminderMail icon to your home screen for easy access, or share pages via \"@ ReminderMail\".</string>
     <string name="about_limitations">Note that ReminderMail only supports one e-mail address.</string>
     <string name="about_privacy">Read the &lt;a href=\"http://jqno.nl/remindermail/privacy.html\">privacy policy&lt;/a>.</string>
-    <string name="about_copyright">Copyright (C) 2011, 2013, 2018 by Jan Ouwens</string>
+    <string name="about_copyright">Copyright © 2011, 2013, 2018 by Jan Ouwens</string>
     <string name="about_website">\
 This program is free software, released under the GNU General Public License.
-For more information, visit the &lt;a href=\"http://jqno.github.com/remindermail\">website&lt;/a>.
+For more information, visit the &lt;a href=\"http://jqno.nl/remindermail\">website&lt;/a>.
     </string>
     <string name="about_close">Close</string>
 
