@@ -67,7 +67,7 @@ class MailActivity : AppCompatActivity() {
 
     private fun getText() = getString(Intent.EXTRA_TEXT)
 
-    private fun getString(id: String): String {
+    private fun getString(id: String): String? {
         return if (intent.action == Intent.ACTION_SEND)
             intent.getStringExtra(id)
         else
